@@ -3,16 +3,15 @@
 
 int get_positive_int(string prompt);
 void pyramid(int n);
-void dots(int k);
+void spaces(int k);
 
 int main(void)
 {
     int height = get_positive_int("Height (from 1 to 8 inclusive): ");
-//     printf("%i\n", height);
     pyramid(height);
 }
 
-// Prompt user for positive integer
+// Prompt user for positive integer from 1 to 8 iclusive
 int get_positive_int(string prompt)
 {
     int num;
@@ -24,33 +23,25 @@ int get_positive_int(string prompt)
     return num;
 }
 
+// Output Mario's pyramid on the screen
 void pyramid(int n)
 {
-//     for (int i = 0; i < n; i++)
-//     {
-//         printf("#\n");
-//     }
-    
     for (int i = 0; i < n; i++)
     {
-//         printf(".");
-        dots(n - i - 1);
+        spaces(n - i - 1);
         for (int j = 0; j <= i; j++)
         {
-//             dots(n - i - 1);
             printf("#");
-//             printf(" i = %i", i);
-//             printf(" j = %i", j);
         }
         printf("\n");
     }    
 }
 
-void dots(int k)
+// Add spaces before '#'
+void spaces(int k)
 {
     for (int i = 0; i < k; i++)
     {
         printf(" ");
     }        
 }
-
